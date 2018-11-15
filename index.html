@@ -11,9 +11,14 @@
     <div id="app" class="wrapper">
       <div class="product">
         <div class="product-image">
-          <img v-bind:src="image" />
+          <img :src="image" />
         </div>
-        <h1>{{product}}</h1>
+        <div class="product-info">
+          <h1>{{product}}</h1>
+          <p v-if="inStock"> In Stock</p>
+          <p v-else> Out of Stock</p>
+        </div>
+
       </div>
     </div>
   </body>
