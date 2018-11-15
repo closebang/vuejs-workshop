@@ -4,7 +4,22 @@ const app = new Vue({
     product: 'Socks',
     image: '/img/socks_black.jpg',
     inStock: true,
-    details: ['80% Cotton', '20% polyester', 'Gender-neutral']
+    details: ['80% Cotton', '20% polyester', 'Gender-neutral'],
+    cart: 0,
+    variants: [{
+      variantId: 1111,
+      variantColor: 'white',
+      variantImage: '/img/socks_white.jpg',
+    }, {
+      variantId: 2222,
+      variantColor: 'black',
+      variantImage: '/img/socks_black.jpg',
+    }],
+  },
+  methods: {
+    updateProduct(image) {
+      this.image = image
+    }
   }
 });
 
