@@ -1,6 +1,9 @@
-var app = new Vue({
+const app = new Vue({
   el: '#app',
   data: {
-    product: 'Socks'
+    product: 'Socks',
+    image: '/img/socks_black.jpg'
   }
-})
+});
+
+
