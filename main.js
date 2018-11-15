@@ -3,7 +3,8 @@ const app = new Vue({
   data: {
     product: 'Socks',
     image: '/img/socks_black.jpg',
-    inStock: true
+    inStock: true,
+    details: ['80% Cotton', '20% polyester', 'Gender-neutral']
   }
 });
 
