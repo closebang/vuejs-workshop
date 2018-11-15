@@ -9,10 +9,11 @@
   <body>
     <nav class="nav-bar"></nav>
     <div id="app" class="wrapper">
-      <Product :premium="false"></Product>
-      <Product :premium="premium"></Product>
-      <Product :premium="premium"></Product>
-
+      <div class="cart">
+        <p>Cart ({{cart.length}})</p>
+      </div>
+      <Product :premium="premium" @add-to-cart="updateCart"></Product>
+      <Product :premium="false" @add-to-cart="updateCart"></Product>
     </div>
   </body>
   <script src="/node_modules/vue/dist/vue.min.js"></script>

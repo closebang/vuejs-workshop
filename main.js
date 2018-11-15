@@ -34,11 +34,6 @@ Vue.component('product', {
           <button v-on:click="addToCart"
                   :disabled="!inStock"
                   :class="{ disabledButton: !inStock }" >Add to cart</button>
-
-          <div class="cart">
-            <p>Cart ({{cart}})</p>
-          </div>
-
         </div>
 
       </div>
@@ -54,7 +49,7 @@ Vue.component('product', {
         variantId: 1111,
         variantColor: 'white',
         variantImage: '/img/socks_white.jpg',
-        variantQuantity: 0,
+        variantQuantity: 1,
       }, {
         variantId: 2222,
         variantColor: 'black',
@@ -69,7 +64,7 @@ Vue.component('product', {
     },
     addToCart() {
       this.variants[this.selectedVariant].variantQuantity -= 1;
-      this.cart += 1;
+      this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId);
     }
   },
   computed: {
@@ -89,7 +84,13 @@ Vue.component('product', {
 const app = new Vue({
   el: '#app',
   data: {
-    premium: true
+    premium: true,
+    cart: []
+  },
+  methods: {
+    updateCart (id) {
+      this.cart.push(id)
+    }
   }
 });
 
