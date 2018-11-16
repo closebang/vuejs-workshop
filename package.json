@@ -11,6 +11,5 @@
   "license": "ISC",
   "dependencies": {
     "vue": "^2.5.17",
-    "vuejs": "^3.0.1"
   }
 }
